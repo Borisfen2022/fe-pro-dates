@@ -33,9 +33,10 @@ function getDay(date, lang) {
 function formatTime(date) {
   const hours = date.getHours();
   const minutes = date.getMinutes();
-  const calculateHours = hours <= 9 ? `0${hours}` : hours;
-  const calculateMinutes = minutes <= 9 ? `0${minutes}` : minutes;
-  return `${calculateHours}:${calculateMinutes}`;
+  function padNumber(number){
+    return number <= 9 ? `0${number}` : number;
+  }
+  return `${padNumber(hours)}:${padNumber(minutes)}`;
 }
 
 /*
